@@ -4,19 +4,19 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        ways = []
+        for i in range(1, n + 1):
+            if i < 3:
+                ways.append(i)
+            else:
+                ways.append(ways[-1] + ways[-2])
 
-        big = n // 2
-        k = 1
-
-        for i in range(1,big+1):
-            k += n-(2*i)+i
-
-
-        return k
-
+        return ways[-1]
 
 
-n = 7
+n = 100
 s = Solution()
-k = s.climbStairs(n=n)
-print(k)
+
+for i in range(3, n + 1):
+    k = s.climbStairs(n=i)
+    print(k)
