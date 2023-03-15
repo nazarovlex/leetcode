@@ -24,7 +24,7 @@ class Solution(object):
             while root:
                 print(cnt)
                 left(root,c)
-
+asdasd
                 add_number(root.left,c)
 
                 # else:
