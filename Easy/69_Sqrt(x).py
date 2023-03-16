@@ -23,7 +23,7 @@ class Solution(object):
 
             elif (i + 1) * (i + 1) < x:
                 i = i + (c - i) // 2
-            elif i * i == x or i * i < x and (i + 1) * (i + 1) > x:
+            elif i * i == x or i * i < x < (i + 1) * (i + 1):
                 return i
             elif (i + 1) * (i + 1) == x:
                 return i + 1
