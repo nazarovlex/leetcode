@@ -34,15 +34,12 @@ class Solution(object):
 
             write_index -= 1
         return nums1
+
+
 num1 = [1, 2, 3, 0, 0, 0]
 m = 3
 num2 = [2, 5, 6]
 n = 3
-# num1 = [1]
-# m = 1
-# num2 = []
-# n = 0
-
 
 number = 2147395599
 result = Solution().merge(num1, m, num2, n)
