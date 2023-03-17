@@ -71,7 +71,8 @@
 # solution 2 abbreviated
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        return (bin(int(a,2) + int(b,2)))[2:]
+        return (bin(int(a, 2) + int(b, 2)))[2:]
+
 
 first = "110010"
 second = "10111"
