@@ -7,24 +7,19 @@ class TreeNode(object):
 
 
 class Solution(object):
-    l1 = []
     def inorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
-        if not root:
-            return None
-        self.inorderTraversal(root.left)
-        self.l1.append(root.val)
-        self.inorderTraversal(root.right)
-        res = self.l1
-        l1 = []
-        return res
+        def helper(root, res):
+            if root:
+                helper(root.left, res)
+                res.append(root.val)
+                helper(root.right, res)
+
+        res = []
+        helper(root, res)
+        return sum(res)
 
 
 tree = TreeNode(val=1, left=TreeNode(val=3, right=TreeNode(val=2)))
 
-s = Solution()
-result = s.inorderTraversal(root=tree)
+result = Solution().inorderTraversal(root=tree)
 print(result)
