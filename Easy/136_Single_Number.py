@@ -1,15 +1,9 @@
 class Solution(object):
     def singleNumber(self, nums):
-        nums = sorted(nums)
-        while len(nums)>1:
-            if nums[0] != nums[1]:
-                return nums[0]
-            elif nums[0] == nums[1]:
-                nums.pop(0)
-                nums.pop(0)
-
-        return nums[0]
-
+        res = 0
+        for num in n:
+            res = res ^ num
+        return res
 
 
 
