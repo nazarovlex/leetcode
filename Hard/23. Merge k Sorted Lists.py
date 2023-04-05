@@ -1,4 +1,3 @@
-# Definition for singly-linked list.
 from typing import Optional, List
 
 
@@ -12,14 +11,17 @@ class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         res = []
         n_list = None
+
         for nums in lists:
             while nums:
                 res.append(nums.val)
                 nums = nums.next
-        res.sort()
-        print(res)
-        for num in res[::-1]:
+
+        res.sort(reverse=True)
+
+        for num in res:
             n_list = ListNode(val=num, next=n_list)
+
         return n_list
 
 
