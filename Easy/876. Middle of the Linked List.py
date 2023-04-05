@@ -7,7 +7,7 @@ class ListNode:
         self.next = next
 
 
-class Solution:
+class Solution:  # Solution with cursor
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         length = 0
         nh = head
@@ -19,14 +19,13 @@ class Solution:
         return head
 
 
-class Solution2:
+class Solution2:  # Solution with array
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         mas = []
         while head:
             mas.append(head.val)
             head = head.next
         head = None
-        print(mas)
         for num in mas[len(mas) // 2:][::-1]:
             head = ListNode(val=num, next=head)
         return head
