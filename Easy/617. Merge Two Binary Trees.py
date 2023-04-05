@@ -8,7 +8,7 @@ class TreeNode(object):
         self.right = right
 
 
-class Solution:
+class Solution: # Recursion solution
     def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
         if root1 is None and root2 is None:
             return None
