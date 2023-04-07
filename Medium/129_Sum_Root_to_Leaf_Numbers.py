@@ -10,15 +10,15 @@ class TreeNode:
 
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
-        def helper(t, sum, res):
+        def helper(t, path, res):
             if not t:
                 return
-            sum = sum * 10 + t.val
+            path = path * 10 + t.val
             if not t.right and not t.left:
-                res.append(sum)
-            helper(t.left, sum, res)
-            helper(t.right, sum, res)
-            sum -= t.val
+                res.append(path)
+            helper(t.left, path, res)
+            helper(t.right, path, res)
+            path -= t.val
 
         res = []
         helper(root, 0, res)
