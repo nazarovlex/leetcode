@@ -19,14 +19,10 @@ class Solution:
                 if left < 0 or right < 0 or abs(left - right) > 1:
                     return -1
                 return max(left, right) + 1
-
         return find_depth(root, 0) >= 0
 
 
-tree = TreeNode(val=5,
-                left=TreeNode(val=4, left=TreeNode(val=11, left=TreeNode(val=7), right=TreeNode(val=2))),
-                right=TreeNode(val=8, left=TreeNode(val=13),
-                               right=TreeNode(val=4, left=TreeNode(val=5), right=TreeNode(val=1))))
+tree = TreeNode(val=5,left=TreeNode(val=4, left=TreeNode(val=11, left=TreeNode(val=7), right=TreeNode(val=2))),right=TreeNode(val=8, left=TreeNode(val=13),right=TreeNode(val=4, left=TreeNode(val=5), right=TreeNode(val=1))))
 
 result = Solution().isBalanced(tree)
 print(result)
