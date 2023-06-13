@@ -17,7 +17,6 @@ class Solution:
 
         return res
 
-
 arr = [17, 18, 5, 4, 6, 1]
 result = Solution().replaceElements(arr)
 print(result)
