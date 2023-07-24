@@ -31,9 +31,37 @@ class Solution:
         return head
 
 
+class Solution2:
+    def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if not head:
+            return head
+        pntr = head
+        length = 1
+        while pntr.next:
+            length += 1
+            pntr = pntr.next
+        k = k % length
+        pntr.next = head
+        tempNode = head
+
+        for _ in range(length - k - 1):
+            tempNode = tempNode.next
+
+        head = tempNode.next
+
+        tempNode.next = None
+
+        return head
+
+
 l1 = ListNode(val=1, next=ListNode(val=2, next=ListNode(val=3, next=ListNode(val=4, next=ListNode(val=5)))))
-k = 2000000000
-result = Solution().rotateRight(l1, k)
-while result:
-    print(result.val, end=" ")
-    result = result.next
+k = 4
+result1 = Solution().rotateRight(l1, k)
+result2 = Solution2().rotateRight(l1, k)
+while result1:
+    print(result1.val, end=" ")
+    result1 = result1.next
+print()
+while result2:
+    print(result2.val, end=" ")
+    result2 = result2.next
